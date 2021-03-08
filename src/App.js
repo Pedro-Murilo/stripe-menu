@@ -1,6 +1,16 @@
+import Layout from './components/Layout';
+import Navbar from './components/Navbar';
+import GlobalStyles from './styles/GlobalStyles';
+
 function App() {
   return (
-    <h1>Hello World</h1>
+    <>
+      <Layout>
+        <Navbar />
+      </Layout>
+
+      <GlobalStyles />
+    </>
   );
 }
 
