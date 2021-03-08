@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { DropdownOption, DropdownProvider } from "../Dropdown";
+import { DropdownOption, DropdownProvider, DropdownRoot } from "../Dropdown";
 
 import { Container, DropdownStyles } from "./styles";
 import { Products, Developers, Company } from "../Content";
@@ -21,6 +20,8 @@ function Navbar() {
             </li>
           </ul>
         </Container>
+
+        <DropdownRoot />
       </DropdownStyles>
     </DropdownProvider>
   );
