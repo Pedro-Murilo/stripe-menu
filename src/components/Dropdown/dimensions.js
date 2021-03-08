@@ -25,7 +25,7 @@ export function useDimensions(responsive = true) {
                 }
             }
         }
-    }, []);
+    }, [element, hook, responsive]);
 
     return [hook, dimensions, element];
 }
