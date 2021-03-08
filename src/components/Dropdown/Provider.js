@@ -1,6 +1,6 @@
-import { createContext, useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from 'react';
 
-export const Context = createContext();
+export const Context = React.createContext();
 
 export function DropdownProvider({ children }) {
   const [options, setOptions] = useState([]);
@@ -29,34 +29,40 @@ export function DropdownProvider({ children }) {
     [setOptions]
   );
 
-  const updateOptionProps = useCallback((optionId, props) => {
-    setOptions(items => 
-        items.map(item => {
-            if(item.id === optionId) {
-                item = { ...item, ...props }
-            }
-            
-            return item;
-        })    
-    );
-  }, [setOptions]);
-  
-  const getOptionById = useCallback((id) => {
-    options.find((item) => item.id === id)
-  }, [options]);
+  const updateOptionProps = useCallback(
+    (optionId, props) => {
+      setOptions((items) =>
+        items.map((item) => {
+          if (item.id === optionId) {
+            item = { ...item, ...props };
+          }
 
-  const deleteOptionById = useCallback((id) => {
-    setOptions(items => items.filter(item => item.id !== id));
-  }, [setOptions]);
+          return item;
+        })
+      );
+    },
+    [setOptions]
+  );
+
+  const getOptionById = useCallback(
+    (id) => options.find((item) => item.id === id),
+    [options]
+  );
+
+  const deleteOptionById = useCallback(
+    (id) => {
+      setOptions((items) => items.filter((item) => item.id !== id));
+    },
+    [setOptions]
+  );
 
   useEffect(() => {
-    if(targetId !== null) {
-        setCachedId(targetId);
-    }
+    if (targetId !== null) setCachedId(targetId);
   }, [targetId]);
 
   return (
-    <Context.Provider value={{
+    <Context.Provider
+      value={{
         registerOption,
         updateOptionProps,
         getOptionById,
@@ -66,8 +72,9 @@ export function DropdownProvider({ children }) {
         setTargetId,
         cachedId,
         setCachedId,
-    }}>
-        {children}
+      }}
+    >
+      {children}
     </Context.Provider>
   );
 }
