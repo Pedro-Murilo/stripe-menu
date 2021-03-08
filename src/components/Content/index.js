@@ -1,3 +1,3 @@
 export { Products } from './Products';
-export { Developers } from './Developers';
+export { Developers } from './Developer';
 export { Company } from './Company';

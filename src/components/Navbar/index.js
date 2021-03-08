@@ -2,6 +2,7 @@ import React from "react";
 import { DropdownOption } from "../Dropdown";
 
 import { Container, DropdownStyles } from "./styles";
+import { Products, Developers, Company } from '../Content'
 
 function Navbar() {
   return (
@@ -9,16 +10,16 @@ function Navbar() {
       <Container>
         <ul>
           <li>
-            <DropdownOption name="Products" content={() => <h1>Products</h1>} />
+            <DropdownOption name="Products" content={Products} />
           </li>
           <li>
             <DropdownOption
               name="Developers"
-              content={() => <h1>Developers</h1>}
+              content={Developers}
             />
           </li>
           <li>
-            <DropdownOption name="Company" content={() => <h1>Company</h1>} />
+            <DropdownOption name="Company" content={Company} />
           </li>
         </ul>
       </Container>
