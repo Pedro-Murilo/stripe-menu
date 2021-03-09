@@ -41,7 +41,7 @@
 
 ---
 ### 📋 About
-This application is a menu from Stripe Homepage, in this project I used 7 hooks: useState, useEffect, useContext, useCallback, useMemo, useRef, useLayoutEffect
+This application is a menu from Stripe Homepage, in this project I used 8 hooks: useState, useEffect, useContext, useCallback, useMemo, useRef, useLayoutEffect
 and the last one is useDimension, a custom hook created to calculate window dimensions. I never used this advanced hooks, and never created a hook before,
 and now I learned a lot with this content and this complex project!
 
